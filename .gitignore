@@ -47,4 +47,4 @@ docs/_build/
 # PyBuilder
 target/
 
-system.py
+settings.py
