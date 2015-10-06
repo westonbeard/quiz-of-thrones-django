@@ -2,4 +2,13 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'quiz/style.css' %}" />
 
-<h1>Hello World</h1>
+
+<h1>hello world</h1>
+
+{% for question in question_list %}
+
+    <ul>
+        <li>{{ question.content }} </li>
+    </ul>
+{% endfor %}
+
