@@ -1,0 +1,70 @@
+- model: quiz.question
+  pk: 1
+  fields:
+    content: Who is the author of Game of Thrones?
+
+- model: quiz.question
+  pk: 2
+  fields:
+    content: Which was the nickname of Maester Aemon'''s namesake':' Aemon Targaryen?
+
+- model: quiz.question
+  pk: 3
+  fields:
+    content: How are the Mountain and the Hound related?
+
+- model: quiz.answer
+  pk: 1
+  fields:
+    content: George RR Martin
+    correct: true
+    question_id: 1
+- model: quiz.answer
+  pk: 2
+  fields:
+    content: JK Rowling
+    correct: false
+    question_id: 1
+- model: quiz.answer
+  pk: 3
+  fields:
+    content: Stephanie Meyer
+    correct: false
+    question_id: 1
+- model: quiz.answer
+  pk: 4
+  fields:
+    content: Aemon the Blessed
+    correct: false
+    question_id: 2
+- model: quiz.answer
+  pk: 5
+  fields:
+    content: The Dragon Knight
+    correct: true
+    question_id: 2
+- model: quiz.answer
+  pk: 6
+  fields:
+    content: Aemon the Unworthy
+    correct: false
+    question_id: 2
+
+- model: quiz.answer
+  pk: 7
+  fields:
+    content: Father/Son
+    correct: false
+    question_id: 3
+- model: quiz.answer
+  pk: 8
+  fields:
+    content: Childhood Friends
+    correct: false
+    question_id: 3
+- model: quiz.answer
+  pk: 9
+  fields:
+    content: Brothers
+    correct: true
+    question_id: 3
