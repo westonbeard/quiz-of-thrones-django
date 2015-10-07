@@ -7,8 +7,14 @@ from quiz.models import Question, Answer
 # Create your views here.
 
 class IndexView(generic.ListView):
+    context_object_name = 'quiz_list'
     template_name = 'quiz/index.html'
+    queryset = Question.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super(IndexView, self).get_context_data(**kwargs)
+        context['answers'] = Answer.objects.all()
+        return context
 
 
-    def get_queryset(self):
-        return Question.objects.all()
+
