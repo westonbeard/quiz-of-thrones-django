@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
+from django.views.generic import TemplateView
 from django.http import HttpResponse
 from django.template import RequestContext, loader
 
@@ -17,4 +18,6 @@ class IndexView(generic.ListView):
         return context
 
 
+class ScoresView(TemplateView):
+    template_name = 'quiz/scores.html'
 
