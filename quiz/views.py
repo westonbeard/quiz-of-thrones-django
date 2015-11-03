@@ -29,13 +29,12 @@ class ScoresView(TemplateView):
         return context
 
     def get_score(request, question_id):
-        p = Question.objects.all()
         num_questions = 3
         correct = 0
-        # selected_answer = p.answer_set.get(pk=request.POST['choice'])
+        # selected_answer = Question.objects.all().answer_set.get(pk=request.POST['choice'])
         for question_id, answer_pk in selected_answer:
             setting_question = Question.objects.get(question_id)
-            correct_answer = setting_question.answer_set.all().filter(correct=True)
-            if correct_answer = selected_answer:
+            correct_answer_id = setting_question.answer_set.all().filter(correct=True).first().pk
+            if correct_answer_id = selected_answer_id:
                 correct += 1
             return correct/num_questions
