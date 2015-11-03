@@ -35,5 +35,7 @@ class ScoresView(TemplateView):
         # selected_answer = p.answer_set.get(pk=request.POST['choice'])
         for question_id, answer_pk in selected_answer:
             setting_question = Question.objects.get(question_id)
-            correct_answer = setting_question.answer_set.get(answer.correct=="true")
-            return(correct/num_questions)
+            correct_answer = setting_question.answer_set.all().filter(correct=True)
+            if correct_answer = selected_answer:
+                correct += 1
+            return correct/num_questions
