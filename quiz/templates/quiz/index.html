@@ -3,7 +3,9 @@
 <link rel="stylesheet" type="text/css" href="{% static 'quiz/style.css' %}" />
 
 
-<h1>hello world</h1>
+<h1>Quiz of Thrones</h1>
+
+<form action="{%  url 'quiz:scores' %}" method="post">{% csrf_token %}
 
 {% for question in quiz_list %}
 
@@ -11,14 +13,22 @@
         <li>{{ question.content }} </li>
     </ul>
     <br>
+
     {% for answer in question.answer_set.all %}
 
+        <input type="radio" name = "answer{{ question.id }}" id="{{ answer.question.id }}" value="{{ answer.pk }}" class='answers'>
         <ul>
-            <li>{{ answer.content }}</li>
+            <li><label class="answers">{{ answer.content }}</label></li>
         </ul>
 
     {% endfor %}
     <br>
 
+
 {% endfor %}
+
+<input type="submit" value="Submit"/>
+
+</form>
+
 

@@ -27,7 +27,6 @@ class User(models.Model):
         return self.content
 
 
-
 class Score(models.Model):
     correct = IntegerField()
     user = models.ForeignKey(User)
